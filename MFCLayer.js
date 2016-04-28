@@ -33,7 +33,7 @@ MFCLayer.prototype.handleMouseMove = function (location) {
     for (var i = 0; i < children.length; i++) {
         var spriteObject = children[i];
         if (spriteObject.getTag() <= 0) continue;
-        if (cc.Rect.CCRectContainsPoint(spriteObject.rect(), location)) {
+        if (cc.rectContainsPoint(spriteObject.rect(), location)) {
    			if (spriteObject.getTag() != this.currentMFC) {
    				this.currentMFC = spriteObject.getTag();
    				

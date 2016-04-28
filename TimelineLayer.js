@@ -198,7 +198,7 @@ var TimelineLayer = cc.Layer.extend({
             var spotRect = spotSprite.rect();
             var spotRectInflate = new cc.Rect(spotRect.origin.x - 5, spotRect.origin.y - 5, spotRect.size.width + 10, spotRect.size.height + 10);
 			if (spotSprite.getOpacity() != 0 && spotSprite.getTag() != this._currentSpotTag) {
-				if (cc.Rect.CCRectContainsPoint(spotRectInflate, touchLocation)) {
+				if (cc.rectContainsPoint(spotRectInflate, touchLocation)) {
 					// hover
                     spotSprite.setColor(TIMELINE_SPOT_COLOR_HOVER);
                     var labelSprite = spotSprite.getChildByTag(1);
@@ -299,7 +299,7 @@ var TimelineLayer = cc.Layer.extend({
 			var spotSprite = this._timeSpotSpriteArray[i];
             var spotRect = spotSprite.rect();
             var spotRectInflate = new cc.Rect(spotRect.origin.x - 5, spotRect.origin.y - 5, spotRect.size.width + 10, spotRect.size.height + 10);
-			if (spotSprite.getOpacity() != 0 && cc.Rect.CCRectContainsPoint(spotRectInflate, touchLocation)) return spotSprite;
+			if (spotSprite.getOpacity() != 0 && cc.rectContainsPoint(spotRectInflate, touchLocation)) return spotSprite;
 		}	
 		return null;
     }

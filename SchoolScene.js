@@ -45,7 +45,7 @@ SchoolScene.prototype.handleMouseMove = function (location) {
     var targetObjectArray = new Array(this.s1, this.s2, this.s3, this.s4, this.s5, this.s6, this.s7, this.s8);
     for (var i = 0; i < targetObjectArray.length; i++) {
         var targetObject = targetObjectArray[i];
-        if (cc.Rect.CCRectContainsPoint(targetObject.rect(), location)) {
+        if (cc.rectContainsPoint(targetObject.rect(), location)) {
         	if (targetObject.getOpacity() != 255) {
         		targetObject.setOpacity(255);
         		if (i == 3) this.mfcLayer.setVisible(true);

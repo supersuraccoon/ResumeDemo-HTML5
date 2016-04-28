@@ -131,7 +131,7 @@ MainScene.prototype.handleMouseMove = function (location) {
     for (var i = 0; i < titleObjectArray.length; i++) {
         var titleObject = titleObjectArray[i];
         var menuObject = menuObjectArray[i];
-        if (cc.Rect.CCRectContainsPoint(titleObject.rect(), location)) {
+        if (cc.rectContainsPoint(titleObject.rect(), location)) {
         	if (menuObject.numberOfRunningActions() == 0) {
         		titleObject.setScale(1.1);
         		menuObject.runAction(cc.RepeatForever.create(cc.RotateBy.create(1, 3600)));
@@ -144,7 +144,7 @@ MainScene.prototype.handleMouseMove = function (location) {
         }
     }
     // flower
-    if (cc.Rect.CCRectContainsPoint(this.contactCircleSprite.rect(), location)) {
+    if (cc.rectContainsPoint(this.contactCircleSprite.rect(), location)) {
     	if (this.flowerSprite.numberOfRunningActions() == 0) {
         	this.flowerSprite.setScale(1.1);
         	this.flowerSprite.runAction(cc.RepeatForever.create(cc.RotateBy.create(1, 360)));
@@ -163,7 +163,7 @@ MainScene.prototype.handleMouseMove = function (location) {
     }
 
     // plus
-    if (this.plusSprite.isVisible() && cc.Rect.CCRectContainsPoint(this.angleSprite.rect(), location)) {
+    if (this.plusSprite.isVisible() && cc.rectContainsPoint(this.angleSprite.rect(), location)) {
     	if (this.plusSprite.numberOfRunningActions() == 0) {
 			if (!GameDataManager.angleChecked) {
 				GameDataManager.angleChecked = true;
@@ -191,7 +191,7 @@ MainScene.prototype.handleMouseMove = function (location) {
     	}
     }
     // minus
-    if (this.evilSprite.isVisible() && cc.Rect.CCRectContainsPoint(this.evilSprite.rect(), location)) {
+    if (this.evilSprite.isVisible() && cc.rectContainsPoint(this.evilSprite.rect(), location)) {
     	if (this.minusSprite.numberOfRunningActions() == 0) {
 			if (!GameDataManager.evilChecked) {
 				GameDataManager.evilChecked = true;
@@ -219,7 +219,7 @@ MainScene.prototype.handleMouseMove = function (location) {
     	}
     } 
     // raccoon
-    if (this.raccoon.isVisible() && cc.Rect.CCRectContainsPoint(this.raccoon.rect(), location)) {
+    if (this.raccoon.isVisible() && cc.rectContainsPoint(this.raccoon.rect(), location)) {
     	this.selfEvaluationLayer.setVisible(true);
     }    
     else {
@@ -228,10 +228,10 @@ MainScene.prototype.handleMouseMove = function (location) {
 };
 
 MainScene.prototype.handleTouch = function (location) {
-	if (cc.Rect.CCRectContainsPoint(this.websiteDetailLabel.rect(), location)) {
+	if (cc.rectContainsPoint(this.websiteDetailLabel.rect(), location)) {
     	window.open("http://www.supersuraccoon-cocos2d.com");
     } 	
-    if (cc.Rect.CCRectContainsPoint(this.emailDetailLabel.rect(), location)) {
+    if (cc.rectContainsPoint(this.emailDetailLabel.rect(), location)) {
     	window.open("mailto:supersuraccoon@gmail.com");
     }  
 };
