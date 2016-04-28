@@ -16,12 +16,12 @@ SettingLayer.prototype.onDidLoadFromCCB = function() {
 SettingLayer.prototype.handleMouseMove = function (location) {
     if (cc.rectContainsPoint(this.settingBg.rect(), location)) {
     	if (!this.isShowing) {
-    		if (this.settingBg.numberOfRunningActions() == 0) this.settingBg.runAction(cc.Sequence.create(cc.MoveBy.create(0.5, cc.p(-80, 0)), cc.CallFunc.create(this.showOver, this.rootNode)));
+    		if (this.settingBg.getNumberOfRunningActions() == 0) this.settingBg.runAction(cc.Sequence.create(cc.MoveBy.create(0.5, cc.p(-80, 0)), cc.CallFunc.create(this.showOver, this.rootNode)));
        	}
     }
     else {
     	if (this.isShowing) {
-    		if (this.settingBg.numberOfRunningActions() == 0) this.settingBg.runAction(cc.Sequence.create(cc.MoveBy.create(0.5, cc.p(80, 0)), cc.CallFunc.create(this.hideOver, this.rootNode)));
+    		if (this.settingBg.getNumberOfRunningActions() == 0) this.settingBg.runAction(cc.Sequence.create(cc.MoveBy.create(0.5, cc.p(80, 0)), cc.CallFunc.create(this.hideOver, this.rootNode)));
     	}
     }
 };

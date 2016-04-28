@@ -132,7 +132,7 @@ MainScene.prototype.handleMouseMove = function (location) {
         var titleObject = titleObjectArray[i];
         var menuObject = menuObjectArray[i];
         if (cc.rectContainsPoint(titleObject.rect(), location)) {
-        	if (menuObject.numberOfRunningActions() == 0) {
+        	if (menuObject.getNumberOfRunningActions() == 0) {
         		titleObject.setScale(1.1);
         		menuObject.runAction(cc.RepeatForever.create(cc.RotateBy.create(1, 3600)));
         	}
@@ -145,7 +145,7 @@ MainScene.prototype.handleMouseMove = function (location) {
     }
     // flower
     if (cc.rectContainsPoint(this.contactCircleSprite.rect(), location)) {
-    	if (this.flowerSprite.numberOfRunningActions() == 0) {
+    	if (this.flowerSprite.getNumberOfRunningActions() == 0) {
         	this.flowerSprite.setScale(1.1);
         	this.flowerSprite.runAction(cc.RepeatForever.create(cc.RotateBy.create(1, 360)));
         	this.contactCircleSprite.runAction(cc.RepeatForever.create(
@@ -164,7 +164,7 @@ MainScene.prototype.handleMouseMove = function (location) {
 
     // plus
     if (this.plusSprite.isVisible() && cc.rectContainsPoint(this.angleSprite.rect(), location)) {
-    	if (this.plusSprite.numberOfRunningActions() == 0) {
+    	if (this.plusSprite.getNumberOfRunningActions() == 0) {
 			if (!GameDataManager.angleChecked) {
 				GameDataManager.angleChecked = true;
 				if (GameDataManager.evilChecked) {
@@ -180,7 +180,7 @@ MainScene.prototype.handleMouseMove = function (location) {
        	}
     }
     else {
-    	if (this.plusSprite.numberOfRunningActions() != 0) {
+    	if (this.plusSprite.getNumberOfRunningActions() != 0) {
     		this.prosTTF.shrinkTTF();
     		this.schoolIntroLabel.setOpacity(255);
         	this.cocos2dIntroLabel.setOpacity(255);
@@ -192,7 +192,7 @@ MainScene.prototype.handleMouseMove = function (location) {
     }
     // minus
     if (this.evilSprite.isVisible() && cc.rectContainsPoint(this.evilSprite.rect(), location)) {
-    	if (this.minusSprite.numberOfRunningActions() == 0) {
+    	if (this.minusSprite.getNumberOfRunningActions() == 0) {
 			if (!GameDataManager.evilChecked) {
 				GameDataManager.evilChecked = true;
 				if (GameDataManager.angleChecked) {
@@ -208,7 +208,7 @@ MainScene.prototype.handleMouseMove = function (location) {
        	}
     }
     else {
-    	if (this.minusSprite.numberOfRunningActions() != 0) {
+    	if (this.minusSprite.getNumberOfRunningActions() != 0) {
     	   	this.consTTF.shrinkTTF();
     		this.workIntroLabel.setOpacity(255);
         	this.hobbyIntroLabel.setOpacity(255);

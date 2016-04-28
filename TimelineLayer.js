@@ -196,7 +196,7 @@ var TimelineLayer = cc.Layer.extend({
 		for (var i = 0; i < this._timeSpotSpriteArray.length; i ++) {
 			var spotSprite = this._timeSpotSpriteArray[i];
             var spotRect = spotSprite.rect();
-            var spotRectInflate = new cc.Rect(spotRect.origin.x - 5, spotRect.origin.y - 5, spotRect.size.width + 10, spotRect.size.height + 10);
+            var spotRectInflate = new cc.Rect(spotRect.x - 5, spotRect.y - 5, spotRect.width + 10, spotRect.height + 10);
 			if (spotSprite.getOpacity() != 0 && spotSprite.getTag() != this._currentSpotTag) {
 				if (cc.rectContainsPoint(spotRectInflate, touchLocation)) {
 					// hover
@@ -298,7 +298,7 @@ var TimelineLayer = cc.Layer.extend({
 		for (var i = 0; i < this._timeSpotSpriteArray.length; i ++) {
 			var spotSprite = this._timeSpotSpriteArray[i];
             var spotRect = spotSprite.rect();
-            var spotRectInflate = new cc.Rect(spotRect.origin.x - 5, spotRect.origin.y - 5, spotRect.size.width + 10, spotRect.size.height + 10);
+            var spotRectInflate = new cc.Rect(spotRect.x - 5, spotRect.y - 5, spotRect.width + 10, spotRect.height + 10);
 			if (spotSprite.getOpacity() != 0 && cc.rectContainsPoint(spotRectInflate, touchLocation)) return spotSprite;
 		}	
 		return null;
